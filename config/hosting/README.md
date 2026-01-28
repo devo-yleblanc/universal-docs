@@ -65,6 +65,9 @@ To configure HTTPS, you can adjust the `appsettings.json` file to use a particul
 
 #### PFX Certificates
 
+By default, PowerShell Universal looks for the PFX certificate in the installation directory `C:\Program Files (x86)\Universal`
+You can place the certificate in this directory or specify an absolute path to a different location.
+
 ```javascript
 {
   "Kestrel": {
@@ -78,7 +81,7 @@ To configure HTTPS, you can adjust the `appsettings.json` file to use a particul
               }
           }
     }
-}
+},
 ```
 
 #### Certificate Store
@@ -99,7 +102,7 @@ To configure a certificate in a particular location and store, you can use a con
            }
       }
    }
-}
+},
 ```
 
 Location can be either `CurrentUser` or `LocalMachine`.
@@ -123,7 +126,7 @@ You can use thumbprint rather than subject in version 3.4 and later.
          }
       }
    }
-}
+},
 ```
 
 #### PEM And Key Certificates
@@ -220,7 +223,7 @@ You can use the Kestrel \ Headers section to define these values.&#x20;
           "X-Frame-Options": "DENY"
        }
     }
-}
+},
 ```
 
 {% hint style="warning" %}
@@ -255,7 +258,7 @@ For self-signed certificates, you will need to include the `AllowInvalid` option
            }
       }
    }
-}
+},
 ```
 
 Once you have updated the `appsettings.json` file, restart the PowerShell Universal service. You should now be able to access your PowerShell Universal web site at `https://localhost`.
